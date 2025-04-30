@@ -1,0 +1,155 @@
+UseEffect in React
+> UseEffect is a React Hook that lets you perform side effects in functional components. 
+> It runs after the component renders and is essential for handling operations that can't be done during the rendering process.
+
+How to Use UseEffect 
+
+jsximport { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // Your side effect code here
+    console.log('Component rendered');
+    
+    // Optional cleanup function
+    return () => {
+
+      console.log('Component will unmount or re-render');
+    };
+  }, [/* dependency array */]); //the recomended one is wether we have to leave [empty arry] or [having arguments] 
+  
+  return <div>Hello World</div>;
+}
+The dependency array determines when the effect runs:
+
+*Empty array ([]): Runs only on mount and unmount
+-With dependencies ([count]): Runs when specified values change
+-No array: Runs after every render
+
+-Advantages of UseEffect
+
+-Side effect management: Cleanly handles API calls, subscriptions, and DOM manipulation
+-Lifecycle access: Provides mount/unmount -functionality in functional components
+-Dependency tracking: Precisely controls when -effects run based on state changes
+-Cleanup support: Prevents memory leaks with built-in cleanup mechanism
+
+-Comparison with Alternatives
+-Feature UseEffectClass Lifecycle Methods Use -Layout Effect Component type FunctionalClass-based -Functional Timing After render Various lifecycle points Before browser paint Syntax Simpler, more declarative More verbose Same as useEffect Multiple effects Easy to separate concerns Requires code organization Same as useEffect Dependency tracking Built-inManual implementation Built-in
+
+Simple Summary
+
+UseEffect is a React Hook that lets you run code after your component renders. It's perfect for API calls, subscriptions, and other "side effects" that shouldn't happen during rendering. Unlike class component lifecycle methods, useEffect combines componentDidMount, componentDidUpdate, and componentWillUnmount into one simple API. It's more declarative and helps you organize related code together rather than splitting it across different lifecycle methods.RetryClaude does not have the ability to run the code it generates yet.Sperform side effects in functional components
+explain in eassy wayEditUnderstanding Side Effects in React Functional Components
+Side effects in React are operations that happen outside the normal rendering process. Think of a "side effect" as anything that reaches beyond your component to interact with the outside world.
+What Are Side Effects?
+Side effects include:
+
+-Fetching data from an API
+Setting up subscriptions or event listeners
+Manually changing the DOM
+Storing data in localStorage
+Setting timers or intervals
+
+-Why We Need UseEffect
+*In functional components, we need a special way to handle these operations because:
+
+*They might slow down rendering
+*They could cause infinite loops if not managed properly
+*Some operations need to be cleaned up when components unmount
+
+*This is where useEffect comes in!
+*UseEffect Simplified
+*Imagine useEffect as a note you leave for React saying: "After you're done updating the screen, please run this code for me."
+jsxuseEffect(() => {
+  // This code runs after React updates the screen
+  document.title = `You clicked ${count} times`;
+});
+It's like telling React: "I need to do something that's not directly related to drawing my component."
+*Real-World Example
+
+Let's look at a simple example - updating the page title when a counter changes:
+jsxfunction Counter() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    // Side effect: changing the browser tab title
+    document.title = `You clicked ${count} times`;
+  });
+  
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+*Without useEffect, you'd have no clean way to perform this operation in a functional component.
+*In Plain Language
+Think of useEffect as your component's way of saying: "I need to do some chores after I've finished showing up on screen." These chores are your "side effects" - things that need to happen but aren't directly related to what the user sees right away.
+*Side effects let your components interact with the world beyond just displaying UI elements, making them truly useful and interactive.RetryClaude does not have the ability to run the code it generates yet.Claude can make mistakes. Please double-check responses. 3.7 SonnetChat controls 3.7 SonnetOur most intelligent model yet Learn moreContentNo content added yetAdd images, PDFs, docs, spreadsheets, and more to summarize, analyze, and query 
+
+
+
+*useEffect in React lets you run code after your 
+component renders — like fetching data, updating the DOM, 
+or setting up timers. It’s React’s way of handling side effects.
+
+
+
+
+
+*useEffect in React lets you run code after your component renders — 
+like fetching data, updating the DOM, or setting up timers. It’s React’s way of handling side effects.
+Example:
+js
+CopyEdit
+useEffect(() => {
+  console.log("Component mounted or updated");
+}, []);
+The [] means it only runs once (when the component mounts).
+
+
+
+
+
+
+
+
+
+ When to Use useEffect:
+Use it when something needs to happen after the component renders, like:
+Fetching data from an API
+Setting up event listeners (e.g., for scrolling or key presses)
+Starting or cleaning up timers
+Updating the DOM manually (e.g., document.title)
+How to Use useEffect:
+js
+CopyEdit
+import { useEffect } from 'react';
+
+useEffect(() => {
+  // Your code here (side effect)
+}, [dependencies]); // Optional array
+The [dependencies] part:
+[] → Run only once (on mount)
+[value] → Run when value changes
+No array → Run after every render
+Example (fetching data):
+js
+CopyEdit
+useEffect(() => {
+  fetchData();
+}, []); // runs once on mount
+
+Bad Sides / Gotchas:
+
+* Runs after render, so it can feel "delayed"
+Too many effects = messy code (hard to debug)
+Can cause infinite loops if you forget to set dependencies correctly
+Overusing it can slow your app or lead to bugs
+Where to Use It:
+Inside function components only
+Not inside loops or conditionals
+Keep useEffect logic simple and focused
