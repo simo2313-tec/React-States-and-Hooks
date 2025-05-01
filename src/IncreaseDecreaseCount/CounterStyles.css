@@ -1,0 +1,143 @@
+/* Main container styling */
+.counter-wrapper {
+    max-width: 550px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  }
+  
+  /* Counter display styling */
+  .counter-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f5f8ff;
+    border-radius: 8px;
+  }
+  
+  .counter-display h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .counter-value {
+    display: inline-block;
+    min-width: 3rem;
+    margin-left: 0.5rem;
+    font-weight: 700;
+    color: #4361ee;
+  }
+  
+  /* Document title component styling */
+  .title-updater {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f0f5ff;
+    border-radius: 8px;
+    border-left: 4px solid #4361ee;
+  }
+  
+  .title-updater h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #2a2f4f;
+    font-weight: 600;
+  }
+  
+  .counter-text {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Button group styling */
+  .button-group {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  
+  /* Button styling */
+  .counter-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+  }
+  
+  .counter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .counter-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Button variations */
+  .btn-increment {
+    background-color: #4361ee;
+  }
+  
+  .btn-increment:hover {
+    background-color: #3a56d4;
+  }
+  
+  .btn-decrement {
+    background-color: #ef476f;
+  }
+  
+  .btn-decrement:hover {
+    background-color: #d13963;
+  }
+  
+  .btn-reset {
+    background-color: #6c757d;
+  }
+  
+  .btn-reset:hover {
+    background-color: #5a6268;
+  }
+  
+  .btn-primary {
+    background-color: #4361ee;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3a56d4;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .counter-wrapper {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    
+    .button-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .counter-btn {
+      width: 100%;
+    }
+    
+    .counter-display h2 {
+      font-size: 1.4rem;
+    }
+  }

@@ -1,0 +1,70 @@
+/* UseEffect component styling */
+.useeffect-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f8faff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .counter-heading {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .counter-value {
+    color: #4361ee;
+    font-weight: 700;
+    background-color: #e9f0ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    margin: 0 0.5rem;
+  }
+  
+  .counter-times {
+    font-weight: normal;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .click-button {
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    margin-top: 1rem;
+  }
+  
+  .click-button:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(67, 97, 238, 0.35);
+  }
+  
+  .click-button:active {
+    transform: translateY(0);
+    background-color: #2a46c4;
+    box-shadow: 0 3px 8px rgba(67, 97, 238, 0.25);
+  }
+  
+  /* Add subtle pulse animation when counter changes */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .counter-animate {
+    animation: pulse 0.3s ease-in-out;
+  }

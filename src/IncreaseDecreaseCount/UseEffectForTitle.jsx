@@ -17,13 +17,15 @@ function UseEffectForTitle() {
         
   return (
     <>
-      <div>
-        <div>
-            <h2>Document Title Update</h2>
-            <button onClick={incremanetCounter}>Click Here</button>
-            <div>Counter: {counter}</div>
+       <div className="counter-wrapper">
+            <div className="title-updater">
+                <h2>Document Title Update</h2>
+                <div className="button-group">
+                    <button className="counter-btn btn-primary" onClick={incremanetCounter}>Click Here</button>
+                </div>
+                <div className="counter-text">Counter: <span className="counter-value">{counter}</span></div>
+            </div>
         </div>
-      </div>
     </>
   )
 }

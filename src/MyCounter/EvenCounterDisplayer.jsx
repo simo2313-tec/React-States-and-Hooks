@@ -6,8 +6,8 @@ import React, { Component } from 'react'
     const evenCounter = counter % 2 === 0 ? counter : counter - 1
     return (
       <>
-       <div>
-        <h2>Even Numbers: {evenCounter}</h2>
+       <div className='counter-display even-counter'>
+        <h2>Even Numbers: <span className='counter-value'>{evenCounter}</span></h2>
         </div> 
       </>
     )

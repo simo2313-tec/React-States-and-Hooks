@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './CounterStyles.css'
 
 function IncreaseDecreaseCount() {
     const [counter, setCounter] = useState (0);
@@ -14,13 +15,15 @@ function IncreaseDecreaseCount() {
     }
   return (
     <>
-     <div>
-        <div>
-            <h2>Counter: {counter}</h2>
-            <button onClick={incremanetCounter}>Incremanet</button>
-            <button onClick={decremanetCounter}>Decremanet</button>
-            <button onClick={resetCounter}>Reset</button>
-        </div>
+     <div className="counter-wrapper">
+            <div className="counter-display">
+                <h2>Counter: <span className="counter-value">{counter}</span></h2>
+            </div>
+            <div className="button-group">
+                <button className="counter-btn btn-increment" onClick={incremanetCounter}>Increment</button>
+                <button className="counter-btn btn-decrement" onClick={decremanetCounter}>Decrement</button>
+                <button className="counter-btn btn-reset" onClick={resetCounter}>Reset</button>
+            </div>
         </div> 
     </>
   )

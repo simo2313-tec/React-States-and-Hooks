@@ -1,0 +1,89 @@
+/* Main container styling */
+.counter-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Button styling */
+  .counter-button {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .counter-button:hover {
+    background-color: #3a5a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .counter-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Counter displays styling */
+  .counter-display {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .counter-display h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .counter-display h2 {
+    font-size: 1.5rem;
+    color: #3a5a8a;
+    margin: 0;
+  }
+  
+  /* Counter values highlighting */
+  .counter-value {
+    display: inline-block;
+    background-color: #e9f0f8;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    min-width: 3rem;
+    text-align: center;
+  }
+  
+  /* Even counter specific styling */
+  .even-counter {
+    border-left: 4px solid #4a6fa5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .counter-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .counter-display h1 {
+      font-size: 1.5rem;
+    }
+    
+    .counter-display h2 {
+      font-size: 1.2rem;
+    }
+  }
